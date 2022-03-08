@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   error_handler.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aboudoun <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: aboudoun <aboudoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 18:54:36 by aboudoun          #+#    #+#             */
-/*   Updated: 2022/03/08 18:57:13 by aboudoun         ###   ########.fr       */
+/*   Updated: 2022/03/08 21:17:22 by aboudoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	exit_eroor(t_stack *a, t_stack *b)
 {
-	write (1, "error\ninvalid argument", 22);
+	write (1, "error\n", 6);
 	if (a->array)
 		free(a->array);
 	if (b->array)

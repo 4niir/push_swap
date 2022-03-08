@@ -6,24 +6,26 @@
 /*   By: aboudoun <aboudoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 18:56:16 by aboudoun          #+#    #+#             */
-/*   Updated: 2022/03/08 19:39:42 by aboudoun         ###   ########.fr       */
+/*   Updated: 2022/03/08 21:26:59 by aboudoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"push_swap.h"
 
-static int	check_double(t_stack *stack_a)
+static int	check_double(int ac, char **av)
 {
 	int	i;
 	int	j;
 
-	i = 0;
-	while (i <= stack_a->top)
+	i = 1;
+	while (av[i])
 	{
+		if (ft_atoi(av[i]) > 2147483647 || ft_atoi(av[i]) < -2147483648)
+			return (0);
 		j = i + 1;
-		while (j <= stack_a->top)
+		while (av[j])
 		{
-			if (stack_a->array[i] == stack_a->array[j])
+			if (ft_atoi(av[j]) == ft_atoi(av[i]))
 				return (0);
 			j++;
 		}
@@ -37,16 +39,15 @@ int	stack(int ac, char **av, t_stack *stack_a, t_stack *stack_b)
 	int	i;
 	int	j;
 
-	// exit_error(stack_a, stack_b);
+	if (!check_double(ac, av))
+		return (0);
 	i = 0;
-	stack_b->top = 0;
+	stack_b->top = ac - 1;
 	stack_a->array = malloc((ac - 1) * sizeof(int));
 	stack_b->array = malloc((ac - 1) * sizeof(int));
 	j = 1;
-	while (av[j])
-		stack_a->array[i++] = ft_atoi(av[j++]);
-	stack_a->top = j - 2;
-	if (!check_double(stack_a))
-		return (0);
+	while ((ac - j) > 0)
+		stack_a->array[i++] = ft_atoi(av[ac - j++]);
+	stack_a->top = j - 1;
 	return (1);
 }
