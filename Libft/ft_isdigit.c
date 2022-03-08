@@ -1,27 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aboudoun <aboudoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/08 18:55:40 by aboudoun          #+#    #+#             */
-/*   Updated: 2022/03/08 19:42:08 by aboudoun         ###   ########.fr       */
+/*   Created: 2021/11/04 11:34:48 by aboudoun          #+#    #+#             */
+/*   Updated: 2022/03/08 18:59:04 by aboudoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
-
-# include "Libft/libft.h"
-
-typedef struct s_stack{
-	int	top;
-	int	*array;
-}	t_stack;
-
-void	exit_eroor(t_stack *a, t_stack *b);
-int		check_digit(int ac, char **av);
-int		stack(int ac, char **av, t_stack *stack_a, t_stack *stack_b);
-
-#endif
+int	ft_isdigit(int ch)
+{
+	if (ch >= '0' && ch <= '9')
+		return (1);
+	return (0);
+}

@@ -1,27 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aboudoun <aboudoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/08 18:55:40 by aboudoun          #+#    #+#             */
-/*   Updated: 2022/03/08 19:42:08 by aboudoun         ###   ########.fr       */
+/*   Created: 2021/11/07 12:23:40 by aboudoun          #+#    #+#             */
+/*   Updated: 2021/12/10 11:08:46 by aboudoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include"libft.h"
 
-# include "Libft/libft.h"
+char	*ft_strdup(const char *src)
+{
+	int		i;
+	char	*dup;
 
-typedef struct s_stack{
-	int	top;
-	int	*array;
-}	t_stack;
-
-void	exit_eroor(t_stack *a, t_stack *b);
-int		check_digit(int ac, char **av);
-int		stack(int ac, char **av, t_stack *stack_a, t_stack *stack_b);
-
-#endif
+	i = ft_strlen(src);
+	dup = (char *) malloc ((i * sizeof(char)) + 1);
+	if (!dup)
+		return (NULL);
+	i = 0;
+	while (src[i])
+	{
+		dup[i] = src[i];
+		i++;
+	}
+	dup[i] = '\0';
+	return (dup);
+}

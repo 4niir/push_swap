@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aboudoun <aboudoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/08 18:55:40 by aboudoun          #+#    #+#             */
-/*   Updated: 2022/03/08 19:42:08 by aboudoun         ###   ########.fr       */
+/*   Created: 2021/11/13 19:33:08 by aboudoun          #+#    #+#             */
+/*   Updated: 2021/12/10 10:48:42 by aboudoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "libft.h"
 
-# include "Libft/libft.h"
+int	ft_lstsize(t_list *lst)
+{
+	int	i;
 
-typedef struct s_stack{
-	int	top;
-	int	*array;
-}	t_stack;
-
-void	exit_eroor(t_stack *a, t_stack *b);
-int		check_digit(int ac, char **av);
-int		stack(int ac, char **av, t_stack *stack_a, t_stack *stack_b);
-
-#endif
+	i = 0;
+	while (lst != NULL)
+	{
+		i++;
+		lst = lst->next;
+	}
+	return (i);
+}

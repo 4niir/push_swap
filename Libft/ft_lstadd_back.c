@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aboudoun <aboudoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/08 18:55:40 by aboudoun          #+#    #+#             */
-/*   Updated: 2022/03/08 19:42:08 by aboudoun         ###   ########.fr       */
+/*   Created: 2021/11/13 23:50:31 by aboudoun          #+#    #+#             */
+/*   Updated: 2021/12/10 10:50:51 by aboudoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include"libft.h"
 
-# include "Libft/libft.h"
+void	ft_lstadd_back(t_list **lst, t_list *new)
+{
+	t_list	*tmp;
 
-typedef struct s_stack{
-	int	top;
-	int	*array;
-}	t_stack;
-
-void	exit_eroor(t_stack *a, t_stack *b);
-int		check_digit(int ac, char **av);
-int		stack(int ac, char **av, t_stack *stack_a, t_stack *stack_b);
-
-#endif
+	if (lst)
+	{
+		if (*lst == NULL)
+			*lst = new;
+		else
+		{
+			tmp = ft_lstlast(*(lst));
+			tmp->next = new;
+		}
+	}
+}

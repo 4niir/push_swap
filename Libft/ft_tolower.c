@@ -1,27 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aboudoun <aboudoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/08 18:55:40 by aboudoun          #+#    #+#             */
-/*   Updated: 2022/03/08 19:42:08 by aboudoun         ###   ########.fr       */
+/*   Created: 2021/11/04 13:29:47 by aboudoun          #+#    #+#             */
+/*   Updated: 2021/12/10 10:48:17 by aboudoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include"libft.h"
 
-# include "Libft/libft.h"
-
-typedef struct s_stack{
-	int	top;
-	int	*array;
-}	t_stack;
-
-void	exit_eroor(t_stack *a, t_stack *b);
-int		check_digit(int ac, char **av);
-int		stack(int ac, char **av, t_stack *stack_a, t_stack *stack_b);
-
-#endif
+int	ft_tolower(int ch)
+{
+	if (ch >= 65 && ch <= 90)
+		ch += 32;
+	return (ch);
+}
