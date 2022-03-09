@@ -1,41 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap.c                                             :+:      :+:    :+:   */
+/*   reverse_rotat.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aboudoun <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/09 15:01:10 by aboudoun          #+#    #+#             */
-/*   Updated: 2022/03/09 15:01:26 by aboudoun         ###   ########.fr       */
+/*   Created: 2022/03/09 15:00:01 by aboudoun          #+#    #+#             */
+/*   Updated: 2022/03/09 15:00:23 by aboudoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include"push_swap.h"
 
-void	sa(t_stack *stack_a, t_stack *stack_b)
+void	rra(t_stack *stack_a)
 {
-	int	temp;
 	int	top;
+	int	temp;
+	int	i;
 
 	top = stack_a->top;
-	temp = stack_a->array[top];
-	stack_a->array[top] = stack_a->array[top - 1];
-	stack_a->array[top - 1] = temp;
+	i = top;
+	temp = stack_a->array[0];
+	while (i++ <= top)
+		stack_a->array[i - 1] = stack_a->array[i];
+	stack_a->array[0] = temp;
 }
 
-void	sb(t_stack *stack_a, t_stack *stack_b)
+void	rrb(t_stack *stack_b)
 {
-	int	temp;
 	int	top;
+	int	temp;
+	int	i;
 
 	top = stack_b->top;
-	temp = stack_b->array[top];
-	stack_b->array[top] = stack_b->array[top - 1];
-	stack_b->array[top - 1] = temp;
+	i = top;
+	temp = stack_b->array[0];
+	while (i++ <= top)
+		stack_b->array[i - 1] = stack_b->array[i];
+	stack_b->array[0] = temp;
 }
 
-void	ss(t_stack *stack_a, t_stack *stack_b)
+void	rrr(t_stack *stack_a, t_stack *stack_b)
 {
-	sa(stack_a, stack_b);
-	sb(stack_a, stack_b);
+	rra(stack_a);
+	rrb(stack_b);
 }

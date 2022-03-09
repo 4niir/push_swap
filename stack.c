@@ -6,7 +6,7 @@
 /*   By: aboudoun <aboudoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 18:56:16 by aboudoun          #+#    #+#             */
-/*   Updated: 2022/03/08 21:26:59 by aboudoun         ###   ########.fr       */
+/*   Updated: 2022/03/09 13:59:34 by aboudoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,6 @@ int	stack(int ac, char **av, t_stack *stack_a, t_stack *stack_b)
 	j = 1;
 	while ((ac - j) > 0)
 		stack_a->array[i++] = ft_atoi(av[ac - j++]);
-	stack_a->top = j - 1;
+	stack_a->top = j - 2;
 	return (1);
 }

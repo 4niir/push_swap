@@ -13,7 +13,11 @@ FLAGS = -Wall -Wextra -Werror
 CFILES = main.c \
 		error_handler.c \
 		check_digit.c \
-		 stack.c \
+		stack.c \
+		push.c \
+		swap.c \
+		rotate.c \
+		reverse_rotate.c \
 
 LIBFT_DIR = Libft
 LIBFT_LIB = $(LIBFT_DIR)/libft.a
@@ -38,7 +42,7 @@ clean:
 	@echo "$(RED)" "cleaning..."
 
 fclean : clean
-	@rm -rf $(NAME) 
+	@rm -rf $(NAME) *.gch
 	$(RM) $(LIBFT_LIB) 
 	@echo "$(RED)" "full cleaning..."
 
