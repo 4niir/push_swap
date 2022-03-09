@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aboudoun <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: aboudoun <aboudoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 15:01:10 by aboudoun          #+#    #+#             */
-/*   Updated: 2022/03/09 15:01:26 by aboudoun         ###   ########.fr       */
+/*   Updated: 2022/03/09 16:44:50 by aboudoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,12 @@ void	sa(t_stack *stack_a, t_stack *stack_b)
 
 	top = stack_a->top;
 	temp = stack_a->array[top];
-	stack_a->array[top] = stack_a->array[top - 1];
-	stack_a->array[top - 1] = temp;
+	if (top >= 1)
+	{
+		stack_a->array[top] = stack_a->array[top - 1];
+		stack_a->array[top - 1] = temp;
+		write(1, "sa\n", 3);
+	}
 }
 
 void	sb(t_stack *stack_a, t_stack *stack_b)
@@ -30,12 +34,30 @@ void	sb(t_stack *stack_a, t_stack *stack_b)
 
 	top = stack_b->top;
 	temp = stack_b->array[top];
-	stack_b->array[top] = stack_b->array[top - 1];
-	stack_b->array[top - 1] = temp;
+	if (top >= 1)
+	{
+		stack_b->array[top] = stack_b->array[top - 1];
+		stack_b->array[top - 1] = temp;
+		write(1, "sb\n", 3);
+	}
 }
 
 void	ss(t_stack *stack_a, t_stack *stack_b)
 {
-	sa(stack_a, stack_b);
-	sb(stack_a, stack_b);
+	int	temp;
+	int	top_a;
+	int	top_b;
+
+	top_a = stack_a->top;
+	top_b = stack_b->top;
+	temp = stack_a->array[top_a];
+	if (top_a >= 1 && top_b >= 1)
+	{
+		stack_a->array[top_a] = stack_a->array[top_a - 1];
+		stack_a->array[top_a - 1] = temp;
+		temp = stack_b->array[top_b];
+		stack_b->array[top_b] = stack_b->array[top_b - 1];
+		stack_b->array[top_b - 1] = temp;
+		write(1, "ss\n", 3);
+	}
 }
