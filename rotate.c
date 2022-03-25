@@ -6,7 +6,7 @@
 /*   By: aboudoun <aboudoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 15:57:50 by aboudoun          #+#    #+#             */
-/*   Updated: 2022/03/09 16:44:23 by aboudoun         ###   ########.fr       */
+/*   Updated: 2022/03/12 14:27:26 by aboudoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ra(t_stack *stack_a)
 	int	temp;
 
 	top = stack_a->top;
-	if (top >= 0)
+	if (top >= 1)
 	{
 		temp = stack_a->array[top];
 		while (top--)
@@ -34,7 +34,7 @@ void	rb(t_stack *stack_b)
 	int	temp;
 
 	top = stack_b->top;
-	if (top >= 0)
+	if (top >= 1)
 	{
 		temp = stack_b->array[top];
 		while (top--)
@@ -52,7 +52,7 @@ void	rr(t_stack *stack_a, t_stack *stack_b)
 
 	top_a = stack_a->top;
 	top_b = stack_b->top;
-	if (top_a >= 0 && top_b >= 0)
+	if (top_a >= 1 && top_b >= 1)
 	{
 		temp = stack_b->array[top_b];
 		while (top_b--)

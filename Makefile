@@ -18,6 +18,8 @@ CFILES = main.c \
 		swap.c \
 		rotate.c \
 		reverse_rotate.c \
+		algo.c \
+		algo_utils.c \
 
 LIBFT_DIR = Libft
 LIBFT_LIB = $(LIBFT_DIR)/libft.a
@@ -34,7 +36,7 @@ $(NAME): $(OBJ) $(LIBFT_LIB)
 	@echo "$(GREEN)" "compiling $<"
 
 $(LIBFT_LIB):
-	$(MAKE) -C $(LIBFT_DIR)
+	@$(MAKE) -C $(LIBFT_DIR)
 
 clean:
 	@rm -rf $(OBJ)
