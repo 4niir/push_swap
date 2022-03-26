@@ -40,12 +40,12 @@ $(LIBFT_LIB):
 
 clean:
 	@rm -rf $(OBJ)
-	$(MAKE) clean -C $(LIBFT_DIR)
+	@$(MAKE) clean -C $(LIBFT_DIR)
 	@echo "$(RED)" "cleaning..."
 
 fclean : clean
 	@rm -rf $(NAME) *.gch
-	$(RM) $(LIBFT_LIB) 
+	@$(RM) $(LIBFT_LIB) 
 	@echo "$(RED)" "full cleaning..."
 
 re : fclean all

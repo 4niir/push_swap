@@ -6,7 +6,7 @@
 /*   By: aboudoun <aboudoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 18:55:05 by aboudoun          #+#    #+#             */
-/*   Updated: 2022/03/25 19:53:43 by aboudoun         ###   ########.fr       */
+/*   Updated: 2022/03/26 19:55:16 by aboudoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,10 @@ int	main(int ac, char **av)
 	t_stack	stack_b;
 
 	if (ac < 2)
-		exit_eroor(&stack_a, &stack_b);
+	{
+		write(1, "Error\n", 6);
+		exit (1);
+	}
 	if (!check_digit(ac, av))
 		exit_eroor(&stack_a, &stack_b);
 	if (!stack(ac, av, &stack_a, &stack_b))

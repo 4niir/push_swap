@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   algo.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aboudoun <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/26 19:47:17 by aboudoun          #+#    #+#             */
+/*   Updated: 2022/03/26 19:47:19 by aboudoun         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include"push_swap.h"
 
-void algo(t_stack *stack_a, t_stack *stack_b)
+void	algo(t_stack *stack_a, t_stack *stack_b)
 {
 	check_sort(stack_a, stack_b);
 }
