@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   algo_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aboudoun <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: aboudoun <aboudoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/26 19:47:23 by aboudoun          #+#    #+#             */
-/*   Updated: 2022/03/26 19:47:25 by aboudoun         ###   ########.fr       */
+/*   Updated: 2022/03/27 14:23:12 by aboudoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,11 @@ void	check_sort(t_stack *stack_a, t_stack *stack_b)
 	while (i < stack_a->top && stack_a->array[i] > stack_a->array[i + 1])
 		i++;
 	if (i == stack_a->top)
-		exit_success(stack_a, stack_b);
+	{
+		if (stack_a->array)
+			free(stack_a->array);
+		if (stack_b->array)
+			free(stack_b->array);
+		exit (0);
+	}
 }

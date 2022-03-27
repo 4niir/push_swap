@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   check_digit.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aboudoun <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: aboudoun <aboudoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 18:54:08 by aboudoun          #+#    #+#             */
-/*   Updated: 2022/03/08 18:54:28 by aboudoun         ###   ########.fr       */
+/*   Updated: 2022/03/27 14:19:18 by aboudoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"push_swap.h"
 
-int	check_digit(int ac, char **av)
+void	check_digit(int ac, char **av, t_stack *a, t_stack *b)
 {
 	int	i;
 	int	j;
@@ -24,14 +24,13 @@ int	check_digit(int ac, char **av)
 		if (av[i][0] == '-' || av[i][0] == '+')
 			j++;
 		if (!av[i][j])
-			return (0);
+			exit_eroor(a, b);
 		while (av[i][j])
 		{
 			if (!ft_isdigit(av[i][j]))
-				return (0);
+				exit_eroor(a, b);
 			j++;
 		}
 		i++;
 	}
-	return (1);
 }
