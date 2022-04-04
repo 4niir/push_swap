@@ -6,13 +6,13 @@
 /*   By: aboudoun <aboudoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 15:01:10 by aboudoun          #+#    #+#             */
-/*   Updated: 2022/03/09 17:02:16 by aboudoun         ###   ########.fr       */
+/*   Updated: 2022/04/04 02:45:51 by aboudoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sa(t_stack *stack_a, t_stack *stack_b)
+void	sa(t_stack *stack_a)
 {
 	int	temp;
 	int	top;
@@ -27,7 +27,7 @@ void	sa(t_stack *stack_a, t_stack *stack_b)
 	}
 }
 
-void	sb(t_stack *stack_a, t_stack *stack_b)
+void	sb(t_stack *stack_b)
 {
 	int	temp;
 	int	top;

@@ -6,7 +6,7 @@
 /*   By: aboudoun <aboudoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/26 19:47:23 by aboudoun          #+#    #+#             */
-/*   Updated: 2022/03/30 13:20:11 by aboudoun         ###   ########.fr       */
+/*   Updated: 2022/03/30 18:22:58 by aboudoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ void	check_sort(t_stack *stack_a, t_stack *stack_b)
 		i++;
 	if (i == stack_a->top)
 	{
+		write(1, "yes\n", 4);
 		if (stack_a->array)
 			free(stack_a->array);
 		if (stack_b->array)

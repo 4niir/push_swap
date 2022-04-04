@@ -20,6 +20,8 @@ CFILES = main.c \
 		reverse_rotate.c \
 		algo.c \
 		algo_utils.c \
+		sorting_3.c \
+		
 
 LIBFT_DIR = Libft
 LIBFT_LIB = $(LIBFT_DIR)/libft.a
