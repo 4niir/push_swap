@@ -6,7 +6,7 @@
 /*   By: aboudoun <aboudoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 18:55:05 by aboudoun          #+#    #+#             */
-/*   Updated: 2022/04/05 02:55:54 by aboudoun         ###   ########.fr       */
+/*   Updated: 2022/04/05 18:10:20 by aboudoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static void	index(t_stack *a, t_stack *b)
 {
 	int	i;
 	int	j;
-	int	pos;
+	int	number;
 	int	*index;
 
 	i = 0;
@@ -26,14 +26,14 @@ static void	index(t_stack *a, t_stack *b)
 	while (i <= a->top)
 	{
 		j = 0;
-		pos = 0;
+		number = 0;
 		while (j <= a->top)
 		{
 			if (a->array[i] > a->array[j])
-				pos++;
+				number++;
 			j++;
 		}
-		index[i] = pos;
+		index[i] = number;
 		i++;
 	}
 	free(a->array);
