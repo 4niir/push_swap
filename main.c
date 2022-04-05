@@ -6,11 +6,39 @@
 /*   By: aboudoun <aboudoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 18:55:05 by aboudoun          #+#    #+#             */
-/*   Updated: 2022/03/30 18:22:04 by aboudoun         ###   ########.fr       */
+/*   Updated: 2022/04/05 02:55:54 by aboudoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"push_swap.h"
+
+static void	index(t_stack *a, t_stack *b)
+{
+	int	i;
+	int	j;
+	int	pos;
+	int	*index;
+
+	i = 0;
+	index = malloc((a->top + 1) * sizeof(int));
+	if (!index)
+		exit_error(a, b);
+	while (i <= a->top)
+	{
+		j = 0;
+		pos = 0;
+		while (j <= a->top)
+		{
+			if (a->array[i] > a->array[j])
+				pos++;
+			j++;
+		}
+		index[i] = pos;
+		i++;
+	}
+	free(a->array);
+	a->array = index;
+}
 
 int	main(int ac, char **av)
 {
@@ -21,6 +49,7 @@ int	main(int ac, char **av)
 	{
 		check_digit(ac, av, &stack_a, &stack_a);
 		stack(ac, av, &stack_a, &stack_b);
+		index(&stack_a, &stack_b);
 		algo(&stack_a, &stack_b);
 	}
 	return (0);

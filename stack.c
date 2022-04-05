@@ -6,7 +6,7 @@
 /*   By: aboudoun <aboudoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 18:56:16 by aboudoun          #+#    #+#             */
-/*   Updated: 2022/03/27 15:03:47 by aboudoun         ###   ########.fr       */
+/*   Updated: 2022/04/05 02:33:58 by aboudoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	stack(int ac, char **av, t_stack *stack_a, t_stack *stack_b)
 	int	j;
 
 	if (!check_double(ac, av))
-		exit_eroor(stack_a, stack_b);
+		exit_error(stack_a, stack_b);
 	i = 0;
 	stack_b->top = -1;
 	stack_a->array = malloc((ac - 1) * sizeof(int));

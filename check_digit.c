@@ -6,7 +6,7 @@
 /*   By: aboudoun <aboudoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 18:54:08 by aboudoun          #+#    #+#             */
-/*   Updated: 2022/03/27 14:19:18 by aboudoun         ###   ########.fr       */
+/*   Updated: 2022/04/05 02:34:35 by aboudoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,11 @@ void	check_digit(int ac, char **av, t_stack *a, t_stack *b)
 		if (av[i][0] == '-' || av[i][0] == '+')
 			j++;
 		if (!av[i][j])
-			exit_eroor(a, b);
+			exit_error(a, b);
 		while (av[i][j])
 		{
 			if (!ft_isdigit(av[i][j]))
-				exit_eroor(a, b);
+				exit_error(a, b);
 			j++;
 		}
 		i++;
