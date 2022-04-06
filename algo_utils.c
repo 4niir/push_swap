@@ -6,7 +6,7 @@
 /*   By: aboudoun <aboudoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/26 19:47:23 by aboudoun          #+#    #+#             */
-/*   Updated: 2022/04/05 23:08:59 by aboudoun         ###   ########.fr       */
+/*   Updated: 2022/04/06 17:13:43 by aboudoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	check_sort(t_stack *stack_a, t_stack *stack_b)
 	i = 0;
 	while (i < stack_a->top && stack_a->array[i] > stack_a->array[i + 1])
 		i++;
-	if (i == stack_a->top)
+	if (i == stack_a->top && stack_b->top == -1)
 	{
 		write(1, "yes\n", 4);
 		if (stack_a->array)
@@ -85,8 +85,11 @@ void	ra_rra(t_stack *a, int top, int bottom)
 	}
 }
 
-void	check_before_pb(t_stack *a, t_stack *b, int n)
+void	check_before_pb(t_stack *a, t_stack *b)
 {
+	int n;
+
+	n = a->array[a->top];
 	if (n > b->array[b->top] || b->top == -1)
 		pb(a, b);
 	else if (n < b->array[b->top] && n > b->array[b->top - 1])
