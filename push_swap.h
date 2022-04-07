@@ -6,7 +6,7 @@
 /*   By: aboudoun <aboudoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 18:55:40 by aboudoun          #+#    #+#             */
-/*   Updated: 2022/04/06 17:14:00 by aboudoun         ###   ########.fr       */
+/*   Updated: 2022/04/07 04:03:15 by aboudoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,10 +38,8 @@ void	sb(t_stack *stack_b);
 void	ss(t_stack *stack_a, t_stack *stack_b);
 void	check_sort(t_stack *stack_a, t_stack *stack_b);
 void	algo(t_stack *stack_a, t_stack *stack_b);
-void	min_algo(t_stack *stack_a, t_stack *stack_b);
-int		scan_top(t_stack *a, int min, int max);
-int		scan_bottom(t_stack *a, int min, int max);
-void	ra_rra(t_stack *a, int top, int bottom);
+int		ft_scan(t_stack *a, int min, int max, int not);
+void	ra_rra(t_stack *a, int scan);
 void	check_before_pb(t_stack *a, t_stack *b);
-void	print_stack(t_stack *s);
+
 #endif

@@ -6,7 +6,7 @@
 /*   By: aboudoun <aboudoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/26 19:47:23 by aboudoun          #+#    #+#             */
-/*   Updated: 2022/04/06 17:13:43 by aboudoun         ###   ########.fr       */
+/*   Updated: 2022/04/07 00:33:33 by aboudoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ void	check_sort(t_stack *stack_a, t_stack *stack_b)
 		i++;
 	if (i == stack_a->top && stack_b->top == -1)
 	{
-		write(1, "yes\n", 4);
 		if (stack_a->array)
 			free(stack_a->array);
 		if (stack_b->array)
@@ -30,64 +29,40 @@ void	check_sort(t_stack *stack_a, t_stack *stack_b)
 	}
 }
 
-int	scan_bottom(t_stack *a, int min, int max)
+int	ft_scan(t_stack *a, int min, int max, int not)
 {
-	int i;
+	int	i;
+	int	top;
+	int	bott;
 
 	i = 0;
 	while (i <= a->top)
 	{
-		if (a->array[i] >= min && a->array[i] <= max)
+		top = a->array[a->top - i];
+		bott = a->array[i];
+		if (top <= not && top >= min && top <= max)
+			return (a->top - i);
+		else if (bott <= not && bott >= min && bott <= max)
 			return (i);
-		else
-			i++;
+		i++;
 	}
 	return (-1);
 }
 
-int	scan_top(t_stack *a, int min, int max)
+void	ra_rra(t_stack *a, int scan)
 {
-	int i;
-	int j;
+	int	half;
 
-	j = 0;
-	i = a->top;
-	while (i >= 0)
-	{
-		if (a->array[i] >= min && a->array[i] <= max)
-			return (j);
-		else
-		{
-			i--;
-			j++;
-		}
-	}
-	return (-1);
-}
-
-void	ra_rra(t_stack *a, int top, int bottom)
-{
-	if (top > bottom)
-	{
-		while (top >= 0)
-		{
-			rra(a);
-			top--;
-		}
-	}
-	else if (bottom >= top)
-	{
-		while (bottom >= 0)
-		{
-			ra(a);
-			bottom--;
-		}
-	}
+	half = a->top / 2;
+	if (scan < half)
+		rra(a);
+	else
+		ra(a);
 }
 
 void	check_before_pb(t_stack *a, t_stack *b)
 {
-	int n;
+	int	n;
 
 	n = a->array[a->top];
 	if (n > b->array[b->top] || b->top == -1)

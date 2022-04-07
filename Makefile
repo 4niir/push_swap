@@ -21,8 +21,6 @@ CFILES = main.c \
 		algo.c \
 		algo_utils.c \
 		sorting_3.c \
-		sorting_min.c \
-		print_stack.c \
 		
 
 LIBFT_DIR = Libft
