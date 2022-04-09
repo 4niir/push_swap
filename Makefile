@@ -40,7 +40,7 @@ GETNEXTLINE_DIR = gnl
 LIBFT_LIB = $(LIBFT_DIR)/libft.a
 GETNEXTLINE_LIB = $(GETNEXTLINE_DIR)/nextline.a
 
-OBJ = $(MAN_FILES:%.c=%.o)
+OBJ = $(MAND_FILES:%.c=%.o)
 OBJ_BONU = $(BONU_FILES:%.c=%.o)
 
 all : $(NAME)
@@ -64,11 +64,13 @@ $(GETNEXTLINE_LIB):
 clean:
 	@rm -rf $(OBJ)
 	@$(MAKE) clean -C $(LIBFT_DIR)
+	@$(MAKE) clean -C $(GETNEXTLINE_DIR)
 	@echo "$(RED)" "cleaning..."
 
 fclean : clean
 	@rm -rf $(NAME) *.gch
-	@$(RM) $(LIBFT_LIB) 
+	@$(MAKE) fclean -C $(LIBFT_DIR)
+	@$(MAKE) fclean -C $(GETNEXTLINE_DIR)
 	@echo "$(RED)" "full cleaning..."
 
 re : fclean all

@@ -6,7 +6,7 @@
 /*   By: aboudoun <aboudoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 18:54:08 by aboudoun          #+#    #+#             */
-/*   Updated: 2022/04/05 02:34:35 by aboudoun         ###   ########.fr       */
+/*   Updated: 2022/04/09 03:20:10 by aboudoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	check_digit(int ac, char **av, t_stack *a, t_stack *b)
 	int	i;
 	int	j;
 
+	if (ac == 0)
+		return;
 	i = 1;
 	while (av[i])
 	{
