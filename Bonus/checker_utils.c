@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checker_utils.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aboudoun <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: aboudoun <aboudoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/09 02:48:10 by aboudoun          #+#    #+#             */
-/*   Updated: 2022/04/09 02:50:36 by aboudoun         ###   ########.fr       */
+/*   Updated: 2022/04/09 16:14:28 by aboudoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ void	valid_input(t_stack *a, t_stack *b, char *input)
 		exit_error(a, b);
 }
 
-void	ft_instructioins(t_stack *a, t_stack *b)
+void	ft_instructions(t_stack *a, t_stack *b)
 {
 	char	*input;
 

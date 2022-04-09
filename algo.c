@@ -6,7 +6,7 @@
 /*   By: aboudoun <aboudoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/26 19:47:17 by aboudoun          #+#    #+#             */
-/*   Updated: 2022/04/08 21:46:19 by aboudoun         ###   ########.fr       */
+/*   Updated: 2022/04/09 17:59:50 by aboudoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,16 @@ void	algo(t_stack *stack_a, t_stack *stack_b)
 	int	chunck;
 	int	not;
 
-	chunck = stack_a->top / 12;
+	if (stack_a->top <= 1000)
+		chunck = stack_a->top / 13;
+	if (stack_a->top <= 510)
+		chunck = stack_a->top / 13;
+	if (stack_a->top <= 110)
+		chunck = stack_a->top / 5;
+	if (stack_a->top <= 31)
+		chunck = stack_a->top / 3;
+	if (stack_a->top <= 20)
+		chunck = stack_a->top;
 	not = stack_a->top - 3;
 	push_b(stack_a, stack_b, chunck, not);
 	sorting_3(stack_a);

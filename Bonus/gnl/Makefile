@@ -1,3 +1,5 @@
+GREEN=$'\x1b[32m
+
 CFILES = get_next_line.c  get_next_line_utils.c 
 OFILES = $(CFILES:%.c=%.o)
 
@@ -11,6 +13,8 @@ all : $(NAME)
 $(NAME) : $(OFILES)
 	@$(CC) $(W) $(CFILES)
 	@ar -rc $(NAME) $(OFILES)
+	@echo "$(GREEN)" "compiling get_next_line"
+
 
 %.o : %.c $(HEADER)
 	@$(CC) $(FLAGS) -c $^ 

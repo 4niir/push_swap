@@ -6,7 +6,7 @@
 /*   By: aboudoun <aboudoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 18:55:40 by aboudoun          #+#    #+#             */
-/*   Updated: 2022/04/09 02:52:12 by aboudoun         ###   ########.fr       */
+/*   Updated: 2022/04/09 16:14:42 by aboudoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,6 @@ void	sb(t_stack *stack_b);
 void	ss(t_stack *stack_a, t_stack *stack_b);
 void	check_sort(t_stack *stack_a, t_stack *stack_b);
 void	valid_input(t_stack *a, t_stack *b, char *input);
-void	ft_instructioins(t_stack *a, t_stack *b);
+void	ft_instructions(t_stack *a, t_stack *b);
 
 #endif
