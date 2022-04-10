@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap.c                                             :+:      :+:    :+:   */
+/*   swap_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aboudoun <aboudoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 15:01:10 by aboudoun          #+#    #+#             */
-/*   Updated: 2022/04/08 23:47:19 by aboudoun         ###   ########.fr       */
+/*   Updated: 2022/04/10 02:48:06 by aboudoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ void	sa(t_stack *stack_a)
 	{
 		stack_a->array[top] = stack_a->array[top - 1];
 		stack_a->array[top - 1] = temp;
-		write(1, "sa\n", 3);
 	}
 }
 
@@ -38,7 +37,6 @@ void	sb(t_stack *stack_b)
 	{
 		stack_b->array[top] = stack_b->array[top - 1];
 		stack_b->array[top - 1] = temp;
-		write(1, "sb\n", 3);
 	}
 }
 
@@ -58,6 +56,5 @@ void	ss(t_stack *stack_a, t_stack *stack_b)
 		temp = stack_b->array[top_b];
 		stack_b->array[top_b] = stack_b->array[top_b - 1];
 		stack_b->array[top_b - 1] = temp;
-		write(1, "ss\n", 3);
 	}
 }

@@ -3,8 +3,7 @@ GREEN=$'\x1b[32m
 PURPLE=$'\x1b[35m
 
 NAME = push_swap
-BONUS = checker
-OBJB = Bonus
+CHECKER = checker
 
 HEADER = push_swap.h \
 
@@ -12,6 +11,11 @@ BON_HEADER = Bonus/push_swap_bonus.h \
 
 CC = gcc
 FLAGS = -Wall -Wextra -Werror
+
+LIBFT_DIR = Libft
+GETNEXTLINE_DIR = Bonus/gnl
+LIBFT_LIB = $(LIBFT_DIR)/libft.a
+GETNEXTLINE_LIB = $(GETNEXTLINE_DIR)/nextline.a
 
 MAND_FILES = main.c \
 		error_handler.c \
@@ -25,36 +29,32 @@ MAND_FILES = main.c \
 		algo_utils.c \
 		sorting_3.c \
 
-BONU_FILES = Bonus/check_digit_bonus.c \
-			Bonus/error_handler_bonus.c \
-			Bonus/check_digit_bonus.c \
-			Bonus/stack_bonus.c \
-			Bonus/push_bonus.c \
-			Bonus/swap_bonus.c \
-			Bonus/rotate_bonus.c \
-			Bonus/reverse_rotate_bonus.c \
-			Bonus/checker.c \
-			Bonus/checker_utils.c \
+BONU_FILES = ./Bonus/error_handler_bonus.c \
+			./Bonus/stack_bonus.c \
+			./Bonus/push_bonus.c \
+			./Bonus/swap_bonus.c \
+			./Bonus/rotate_bonus.c \
+			./Bonus/reverse_rotate_bonus.c \
+			./Bonus/checker.c \
+			./Bonus/checker_utils.c \
 
-LIBFT_DIR = Libft
-GETNEXTLINE_DIR = Bonus/gnl
-LIBFT_LIB = $(LIBFT_DIR)/libft.a
-GETNEXTLINE_LIB = $(GETNEXTLINE_DIR)/nextline.a
-
-OBJ = $(MAND_FILES:%.c=%.o)
 OBJ_BONU = $(BONU_FILES:%.c=%.o)
+OBJ = $(MAND_FILES:%.c=%.o)
 #OBJ_BONU = $(BONU_FILES:%.c=$(OBJB)/%.o)
 
 all : $(NAME)
 
-$(NAME): $(OBJ) $(LIBFT_LIB)
+$(NAME): $(OBJ) $(LIBFT_LIB) $(HEADER)
 	@$(CC) $(FLAGS) $(LIBFT_LIB) $(OBJ) -o $(NAME)
 
-bonus : $(NAME) $(OBJ_BONU) $(GETNEXTLINE_LIB)
-	$(CC) $(FLAGS) $(LIBFT_LIB) $(GETNEXTLINE_LIB) $(OBJ_BONU) -o $(BONUS)
 
-%.o : %.c $(HEADER) $(BONU_HEADER)
-	@$(CC) $(FLAGS) -c $^
+bonus : all $(CHECKER)
+
+$(CHECKER): $(OBJ_BONU) $(GETNEXTLINE_LIB) $(BONU_HEADER) $(LIBFT_LIB)
+	@$(CC) $(FLAGS) $(LIBFT_LIB) $(GETNEXTLINE_LIB) $(OBJ_BONU) -o $@
+
+%.o : %.c $(HEADER)
+	@$(CC) $(FLAGS) -o $@ -c $<
 	@echo "$(GREEN)" "compiling $<"
 
 $(LIBFT_LIB):
@@ -70,7 +70,7 @@ clean:
 	@echo "$(RED)" "cleaning ..."
 
 fclean : clean
-	@rm -rf $(NAME) $(BONUS) *.gch Bonus/*.gch
+	@rm -rf $(NAME) $(CHECKER) *.gch Bonus/*.gch
 	@$(MAKE) fclean -C $(LIBFT_DIR)
 	@$(MAKE) fclean -C $(GETNEXTLINE_DIR)
 	@echo "$(RED)" "full cleaning..."

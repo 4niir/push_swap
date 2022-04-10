@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rotate.c                                           :+:      :+:    :+:   */
+/*   rotate_bonus.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aboudoun <aboudoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 15:57:50 by aboudoun          #+#    #+#             */
-/*   Updated: 2022/04/08 23:47:08 by aboudoun         ###   ########.fr       */
+/*   Updated: 2022/04/10 02:47:55 by aboudoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ void	ra(t_stack *stack_a)
 		while (top--)
 			stack_a->array[top + 1] = stack_a->array[top];
 		stack_a->array[0] = temp;
-		write(1, "ra\n", 3);
 	}
 }
 
@@ -40,7 +39,6 @@ void	rb(t_stack *stack_b)
 		while (top--)
 			stack_b->array[top + 1] = stack_b->array[top];
 		stack_b->array[0] = temp;
-		write(1, "rb\n", 3);
 	}
 }
 
@@ -62,6 +60,5 @@ void	rr(t_stack *stack_a, t_stack *stack_b)
 		while (top_a--)
 			stack_a->array[top_a + 1] = stack_a->array[top_a];
 		stack_a->array[0] = temp;
-		write(1, "rr\n", 3);
 	}
 }
