@@ -6,7 +6,7 @@
 /*   By: aboudoun <aboudoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/26 19:47:17 by aboudoun          #+#    #+#             */
-/*   Updated: 2022/04/10 03:21:51 by aboudoun         ###   ########.fr       */
+/*   Updated: 2022/04/10 21:25:31 by aboudoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,9 +76,9 @@ void	algo(t_stack *stack_a, t_stack *stack_b)
 	int	not;
 
 	if (stack_a->top <= 1000)
-		chunck = stack_a->top / 13;
+		chunck = stack_a->top / 23;
 	if (stack_a->top <= 510)
-		chunck = stack_a->top / 13;
+		chunck = stack_a->top / 12;
 	if (stack_a->top <= 110)
 		chunck = stack_a->top / 6;
 	if (stack_a->top <= 31)
