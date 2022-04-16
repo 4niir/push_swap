@@ -6,11 +6,30 @@
 /*   By: aboudoun <aboudoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/26 19:47:23 by aboudoun          #+#    #+#             */
-/*   Updated: 2022/04/07 00:33:33 by aboudoun         ###   ########.fr       */
+/*   Updated: 2022/04/15 21:19:06 by aboudoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"push_swap.h"
+
+void	move_to_top(t_stack *b, int n)
+{
+	while (n < b->top && n != 0)
+	{
+		if (n >= b->top / 2)
+		{
+			rb(b);
+			n++;
+		}
+		else
+		{
+			rrb(b);
+			n--;
+		}	
+	}
+	if (n == 0)
+		rrb(b);
+}
 
 void	check_sort(t_stack *stack_a, t_stack *stack_b)
 {
@@ -54,10 +73,10 @@ void	ra_rra(t_stack *a, int scan)
 	int	half;
 
 	half = a->top / 2;
-	if (scan < half)
-		rra(a);
-	else
+	if (scan >= half && scan != a->top)
 		ra(a);
+	else if (scan < half)
+		rra(a);
 }
 
 void	check_before_pb(t_stack *a, t_stack *b)

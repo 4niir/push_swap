@@ -6,7 +6,7 @@
 /*   By: aboudoun <aboudoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 18:55:05 by aboudoun          #+#    #+#             */
-/*   Updated: 2022/04/09 21:51:11 by aboudoun         ###   ########.fr       */
+/*   Updated: 2022/04/12 03:17:45 by aboudoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int	main(int ac, char **av)
 	t_stack	stack_a;
 	t_stack	stack_b;
 
-	if (ac > 2)
+	if (ac >= 2)
 	{
 		check_digit(ac, av, &stack_a, &stack_a);
 		stack(ac, av, &stack_a, &stack_b);

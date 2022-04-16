@@ -28,6 +28,7 @@ MAND_FILES = main.c \
 		algo.c \
 		algo_utils.c \
 		sorting_3.c \
+		sorting_2.c \
 
 BONU_FILES = ./Bonus/error_handler_bonus.c \
 			./Bonus/stack_bonus.c \

@@ -6,7 +6,7 @@
 /*   By: aboudoun <aboudoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/09 02:48:10 by aboudoun          #+#    #+#             */
-/*   Updated: 2022/04/09 16:14:28 by aboudoun         ###   ########.fr       */
+/*   Updated: 2022/04/11 23:10:31 by aboudoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	check_sort(t_stack *stack_a, t_stack *stack_b)
 		free(stack_a->array);
 	if (stack_b->array)
 		free(stack_b->array);
-	exit (1);
+	exit (0);
 }
 
 void	valid_input(t_stack *a, t_stack *b, char *input)

@@ -6,7 +6,7 @@
 /*   By: aboudoun <aboudoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/07 12:21:31 by aboudoun          #+#    #+#             */
-/*   Updated: 2022/03/08 21:15:22 by aboudoun         ###   ########.fr       */
+/*   Updated: 2022/04/12 20:16:25 by aboudoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ long int	ft_atoi(const char *str)
 	while (ft_isdigit(str[i]) == 1 && str[i])
 	{
 		n = n * 10 + ((int)str[i] - '0');
+		if (n * s > 2147483647 || n * s < -2147483648)
+			return (2147483650);
 		i++;
 	}
 	return (n * s);

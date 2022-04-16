@@ -6,7 +6,7 @@
 /*   By: aboudoun <aboudoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 18:55:40 by aboudoun          #+#    #+#             */
-/*   Updated: 2022/04/07 04:03:15 by aboudoun         ###   ########.fr       */
+/*   Updated: 2022/04/14 05:30:55 by aboudoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ typedef struct s_stack{
 
 void	exit_error(t_stack *a, t_stack *b);
 void	sorting_3(t_stack *a);
+void	sorting_2(t_stack *a, t_stack *b);
 void	check_digit(int ac, char **av, t_stack *stack_a, t_stack *stack_b);
 void	stack(int ac, char **av, t_stack *stack_a, t_stack *stack_b);
 void	ra(t_stack *stack_a);
@@ -41,5 +42,6 @@ void	algo(t_stack *stack_a, t_stack *stack_b);
 int		ft_scan(t_stack *a, int min, int max, int not);
 void	ra_rra(t_stack *a, int scan);
 void	check_before_pb(t_stack *a, t_stack *b);
+void	move_to_top(t_stack *b, int n);
 
 #endif

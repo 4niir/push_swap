@@ -6,44 +6,61 @@
 /*   By: aboudoun <aboudoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/26 19:47:17 by aboudoun          #+#    #+#             */
-/*   Updated: 2022/04/10 21:25:31 by aboudoun         ###   ########.fr       */
+/*   Updated: 2022/04/15 20:46:00 by aboudoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"push_swap.h"
 
-static int	find_max(t_stack *b)
+static int	find_min_dis(t_stack *b, int pos)
+{
+	int	dis_from_top;
+	int	dis_from_bot;
+
+	dis_from_top = b->top - pos;
+	dis_from_bot = pos;
+	if (dis_from_top > dis_from_bot)
+		return (dis_from_bot);
+	return (dis_from_top);
+}
+
+static int	find_pos(t_stack *b, int n)
 {
 	int	i;
-	int	position;
 
 	i = 0;
-	position = 1;
-	while (i <= b->top)
-	{
-		if (b->array[i] > b->array[position])
-			position = i;
+	while (b->array[i] != n)
 		i++;
-	}
-	return (position);
+	return (i);
 }
 
 static void	push_a(t_stack *a, t_stack *b)
 {
-	int	max;
+	int	big;
+	int	nd_big;
 
-	while (b->top >= 0)
+	while (b->top > 0)
 	{
-		max = find_max(b);
-		if (max == b->top || b->top == 0)
+		big = find_pos(b, b->top);
+		nd_big = find_pos(b, b->top - 1);
+		if (big == b->top)
 			pa(a, b);
-		else if (max == b->top - 1)
-			sb(b);
-		else if (max <= b->top / 2)
-			rrb(b);
-		else if (max > b->top / 2)
-			rb(b);
+		else if (find_min_dis(b, big) < find_min_dis(b, nd_big))
+		{
+			move_to_top(b, big);
+			pa(a, b);
+		}
+		else
+		{
+			move_to_top(b, nd_big);
+			pa(a, b);
+			big = find_pos(b, b->top + 1);
+			move_to_top(b, big);
+			pa(a, b);
+			sa(a);
+		}
 	}
+	pa(a, b);
 }
 
 static void	push_b(t_stack *stack_a, t_stack *stack_b, int chunck, int not)
@@ -75,12 +92,14 @@ void	algo(t_stack *stack_a, t_stack *stack_b)
 	int	chunck;
 	int	not;
 
+	if (stack_a->top == 1)
+		sorting_2(stack_a, stack_b);
 	if (stack_a->top <= 1000)
 		chunck = stack_a->top / 23;
 	if (stack_a->top <= 510)
 		chunck = stack_a->top / 12;
 	if (stack_a->top <= 110)
-		chunck = stack_a->top / 6;
+		chunck = stack_a->top / 5;
 	if (stack_a->top <= 31)
 		chunck = stack_a->top / 3;
 	if (stack_a->top <= 20)
