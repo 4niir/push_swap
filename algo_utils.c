@@ -6,7 +6,7 @@
 /*   By: aboudoun <aboudoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/26 19:47:23 by aboudoun          #+#    #+#             */
-/*   Updated: 2022/04/15 21:19:06 by aboudoun         ###   ########.fr       */
+/*   Updated: 2022/05/13 15:29:33 by aboudoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ int	ft_scan(t_stack *a, int min, int max, int not)
 	return (-1);
 }
 
-void	ra_rra(t_stack *a, int scan)
+void	ra_or_rra(t_stack *a, int scan)
 {
 	int	half;
 

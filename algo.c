@@ -6,7 +6,7 @@
 /*   By: aboudoun <aboudoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/26 19:47:17 by aboudoun          #+#    #+#             */
-/*   Updated: 2022/04/15 20:46:00 by aboudoun         ###   ########.fr       */
+/*   Updated: 2022/05/13 15:29:47 by aboudoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ static int	find_pos(t_stack *b, int n)
 	return (i);
 }
 
-static void	push_a(t_stack *a, t_stack *b)
+static void	push_to_a(t_stack *a, t_stack *b)
 {
 	int	big;
 	int	nd_big;
@@ -63,7 +63,7 @@ static void	push_a(t_stack *a, t_stack *b)
 	pa(a, b);
 }
 
-static void	push_b(t_stack *stack_a, t_stack *stack_b, int chunck, int not)
+static void	push_to_b(t_stack *stack_a, t_stack *stack_b, int chunck, int not)
 {
 	int	scan;
 	int	min;
@@ -80,7 +80,7 @@ static void	push_b(t_stack *stack_a, t_stack *stack_b, int chunck, int not)
 			max = max + chunck;
 			scan = ft_scan(stack_a, min, max, not);
 		}
-		ra_rra(stack_a, scan);
+		ra_or_rra(stack_a, scan);
 		scan = ft_scan(stack_a, min, max, not);
 		if (scan == stack_a->top)
 			check_before_pb(stack_a, stack_b);
@@ -105,8 +105,8 @@ void	algo(t_stack *stack_a, t_stack *stack_b)
 	if (stack_a->top <= 20)
 		chunck = stack_a->top;
 	not = stack_a->top - 3;
-	push_b(stack_a, stack_b, chunck, not);
+	push_to_b(stack_a, stack_b, chunck, not);
 	sorting_3(stack_a);
-	push_a(stack_a, stack_b);
+	push_to_a(stack_a, stack_b);
 	check_sort(stack_a, stack_b);
 }
